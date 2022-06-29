@@ -1,11 +1,10 @@
 package FreeIT.Lesson3;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Count_Words {
+public class CountWords {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter sentence: ");
