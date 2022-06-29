@@ -10,17 +10,17 @@ public class Count_Words {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter sentence: ");
         String sentence = scanner.nextLine();
-        int amount_symbols = sentence.length();
+        int amountSymbols = sentence.length();
 //        char[] sentence_array = sentence.toCharArray();
 
         // Create array from sentence
         ArrayList<String> words = new ArrayList<String>();
         String word = "";
-        for (int i = 0; i < amount_symbols; i++) {
+        for (int i = 0; i < amountSymbols; i++) {
 
             char letter = sentence.charAt(i);
-            boolean space_not_true = (letter != ' ');
-            if (space_not_true) {
+            boolean spaceNotTrue = (letter != ' ');
+            if (spaceNotTrue) {
                 word += letter;
             }
             else {
@@ -32,21 +32,22 @@ public class Count_Words {
 //        System.out.println(words);
 
         // Determination of the number of identical words
-        int amount_words = words.size();
-        for (int i = 0; i < amount_words; i++){
-            if (words.get(i).equals("_")){
+        int amountWords = words.size();
+        for (int i = 0; i < amountWords; i++){
+            if (words.get(i).equals("_") || words.get(i).equals(",") || words.get(i).equals(".")
+                    || words.get(i).equals("?") || words.get(i).equals("!") || words.get(i).equals(":")){
                 continue;
             }
             else{
-                String new_word = words.get(i);
-                int number_word = 1;
-                for (int y = i + 1; y < amount_words; y++){
-                    if (new_word.equals(words.get(y))){
-                        number_word++;
+                String newWord = words.get(i);
+                int numberWord = 1;
+                for (int y = i + 1; y < amountWords; y++){
+                    if (newWord.equals(words.get(y))){
+                        numberWord++;
                         words.set(y, "_");
                     }
                 }
-                System.out.println("Amount of word <" + new_word + "> is " + number_word + ".");
+                System.out.println("Amount of word <" + newWord + "> is " + numberWord + ".");
             }
 
         }
